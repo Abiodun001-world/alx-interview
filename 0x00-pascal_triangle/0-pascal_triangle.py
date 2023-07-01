@@ -1,22 +1,31 @@
-def pascal_triangle(n):
-    if n <= 0:
-        return []
+#!/usr/bin/python3
+"""returns a pascal triangle"""
 
-    # Initialize the result list with the first row [1]
-    result = [[1]]
+
+def pascal_triangle(n):
+    """
+    returns a list of integers in a pascal triangle format
+    """
+
+    if n <= 0:
+        # return empty list
+        return []
+    pascal = [[1]]
+    if n == 1:
+        return pascal
 
     for i in range(1, n):
-        # Initialize the current row with [1]
-        current_row = [1]
-
-        # Calculate the values for the current row
-        for j in range(1, i):
-            current_row.append(result[i-1][j-1] + result[i-1][j])
-
-        # Add the last value 1 to the current row
-        current_row.append(1)
-
-        # Append the current row to the result list
-        result.append(current_row)
-
-    return result
+        left = -1
+        right = 0
+        in_pas = []
+        for j in range(i + 1):
+            num = 0 
+            if left > -1:
+                num += pascal[i - 1][left]
+            if right < i:
+                num += pascal[i - 1][right]
+            left += 1
+            right += 1
+            in_pas.append(num)
+        pascal.append(in_pas)
+    return pascal
