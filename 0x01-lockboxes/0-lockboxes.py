@@ -11,17 +11,23 @@ def canUnlockAll(boxes):
     - The first box boxes[0] is unlocked
     - Return True if all boxes can be opened, else return False
     """
-    keys = set([0])
+    canUnlockAll = False
+    keys = {0: True}
     n_boxes = len(boxes)
-
     while True:
-        prev_keys = keys.copy()
+        n_keys = len(keys)
 
-        for i in range(n_boxes):
-            if i in keys:
-                keys.update(boxes[i])
+        for i in range(len(boxes)):
+            if boxes[i] and keys.get(i, False):
+                for j in boxes[i]:
+                    if j < n_boxes:
+                        keys[j] = True
+                    boxes[i] = None
 
-        if keys == prev_keys:
+        if not (len(keys) > n_keys):
             break
 
-    return len(keys) == n_boxes
+    if n_keys == len(boxes):
+        canUnlockAll = True
+
+    return canUnlockAll
