@@ -3,6 +3,8 @@
 
 ![Chess grandmaster Judit Polgár, the strongest female chess player of all time](./Judit-photo1_602x433.jpg)
 
+Chess grandmaster Judit Polgár, the strongest female chess player of all time
+
 ## Algorithm: Python
 
 ### Overview
