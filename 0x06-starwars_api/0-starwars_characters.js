@@ -34,4 +34,3 @@ function CharRequest(idx, url, characters, limit) {
     }
   });
 }
-
