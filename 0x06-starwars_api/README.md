@@ -1,6 +1,6 @@
 # 0x06. Star Wars API
 
-![Star Wars](#0x06-star-wars-api)
+[Star Wars](#0x06-star-wars-api)
 
 ## Description
 
