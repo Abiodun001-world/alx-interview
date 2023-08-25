@@ -23,7 +23,3 @@ def makeChange(coins, total):
         else:
             coin_idx += 1
     return coins_count
-
-# Test cases
-# print(makeChange([1, 2, 25], 37))  # Output: 7
-# print(makeChange([1256, 54, 48, 16, 102], 1453))  # Output: -1
